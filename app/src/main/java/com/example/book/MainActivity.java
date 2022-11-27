@@ -1,9 +1,11 @@
 package com.example.book;
 
+import static java.lang.Math.round;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -16,14 +18,14 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.book.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
-
-    private ActivityMainBinding binding;
-
+    //данные о выполненных заданиях должны обновляться(когда), инфа о класс должен быть виден во всех классах(нужно добавить файл сохраняющий данные)
+    //
+    private final SaveProgress saveProgress = new SaveProgress(1);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        com.example.book.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -35,6 +37,10 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        ProgressBar progressBar = findViewById(R.id.progressBar);
+        float p = (float)saveProgress.questSuccesses/saveProgress.getAllQuestCount();
+        progressBar.setProgress(round(p * 100));
     }
     public void onClick1(View view) {
         Intent intent = new Intent(this, Theme1Activity.class);
