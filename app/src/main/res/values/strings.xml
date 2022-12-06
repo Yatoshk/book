@@ -3,6 +3,7 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Learning</string>
     <string name="theme1">Тема 1. Составные части</string>
+    <string name="theme2">Тема 2. Составные части</string>
     <string name="theory">Теория</string>
     <string name="test">Задания</string>
     <string name="check">Проверить ответы</string>
@@ -17,5 +18,14 @@
     \tДля обозначения свойства переменной или константы используются прописные буквы латинского алфавита, с числовыми индексами или без них, они называются предикаты:\n
     <b>A<sub><small>7</small></sub>, B<sup><small>4</small></sup>, M,..</b>\n
         \tНапример “Рим большой” можно записать как <b>Hd</b>, где <b>H</b> это “x большой”, а <b>d</b> это Рим. Предикаты могут принимать больше одной константы или переменой например “Рим больше других городов”, можно записать как <b>Jay</b>, где <b>J</b> это “x больше z”, <b>a</b> это Рим, <b>y</b> это города.\n</string>
+    <string name="title_activity_theme2">Theme2Activity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 </resources>
