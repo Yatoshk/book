@@ -25,12 +25,13 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+
 public class MainActivity extends AppCompatActivity {
     //данные о выполненных заданиях должны обновляться(когда), инфа о класс должен быть виден во всех классах(нужно добавить файл сохраняющий данные)
+
     //SaveProgress saveProgress;
 
-
-    private final static String FILE_NAME = "content.txt";
+    public final static String FILE_NAME = "content.txt";
     SharedPreferences saves;
 
 
@@ -52,26 +53,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-
-        saves = getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE);
-
-
-
-        int n = saves.getInt(FILE_NAME, 0);
-
-
-        SharedPreferences.Editor editor = saves.edit();
-        editor.putInt(FILE_NAME, 1);
-        editor.apply();
-
-        n = saves.getInt(FILE_NAME, 0);
-
+        saves = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
         ProgressBar pb = findViewById(R.id.progressBar);
-        float p = (float)n/5;
+
+        saveProgress(2);
+        float p = (float)loadProgress()/5;
         pb.setProgress(round(p * 100));
-
-
-
+        //saveProgress.saveProgress(saves, 3);
+        //saveProgress.setProgressBar(saves, pb);
     }
     public void onClick1(View view) {
         Intent intent = new Intent(this, Theme1Activity.class);
@@ -82,4 +71,25 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Theme2Activity.class);
         startActivity(intent);
     }
+
+    ////
+
+    private void saveProgress(int n) {
+
+        SharedPreferences.Editor editor = saves.edit();
+        editor.putInt(FILE_NAME, n);
+        editor.apply();
+
+    }
+
+    private int loadProgress() {
+        int n = saves.getInt(FILE_NAME, 0);
+        return n;
+    }
+/*
+    @Override
+    protected void onDestroy(){
+        super.onDestroy();
+        saveProgress(loadProgress());
+    }*/
 }

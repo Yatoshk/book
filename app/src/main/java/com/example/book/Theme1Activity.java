@@ -34,13 +34,6 @@ public class Theme1Activity extends AppCompatActivity {
         else if (Character.isUpperCase(text1.charAt(0)) && Character.isLowerCase(text1.charAt(1)) &&
                 Character.isLowerCase(text1.charAt(2)))
             editText1.setBackgroundColor(Color.GREEN);
-/*
-        if (id == 0)
-            rb1.setBackgroundColor(Color.GREEN);
-        else if (id == 1)
-            rb2.setBackgroundColor(Color.RED);
-        else if (id == 2)
-            rb3.setBackgroundColor(Color.RED);*/
 
         switch (id) {
             case R.id.radioButton:
@@ -57,6 +50,7 @@ public class Theme1Activity extends AppCompatActivity {
                 rb3.setBackgroundColor(Color.GREEN);
                 rb2.setBackgroundColor(Color.TRANSPARENT);
                 rb1.setBackgroundColor(Color.TRANSPARENT);
+
                 break;
             default:
                 break;

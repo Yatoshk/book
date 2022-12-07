@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/buttonTheme2"
         android:layout_width="344dp"
-        android:layout_height="45dp"
+        android:layout_height="56dp"
         android:onClick="onClick2"
         android:text="@string/theme2"
         app:layout_constraintBottom_toBottomOf="parent"

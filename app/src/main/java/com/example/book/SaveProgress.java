@@ -4,19 +4,12 @@ import static android.content.Context.MODE_PRIVATE;
 
 import static java.lang.Math.round;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.ProgressBar;
-import android.widget.Toast;
-
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 public class SaveProgress {
-    private final static String FILE_NAME = "content.txt";
-    private SharedPreferences saves;
+    /*
+    public final static String FILE_NAME = "content.txt";
 
     private final int allQuest = 5;
 
@@ -26,16 +19,21 @@ public class SaveProgress {
         return allQuest;
     }
 
-    public void setProgressBar(ProgressBar pb){
-        float p = (float)this.questSuccesses/this.getAllQuest();
+    public void setProgressBar(SharedPreferences saves, ProgressBar pb){
+        float p = (float)loadProgress(saves)/this.getAllQuest();
         pb.setProgress(round(p * 100));
     }
     //сохранение прогресса
-    public void saveProgress(int n){
+    public void saveProgress(SharedPreferences saves, int n) {
+        SharedPreferences.Editor editor = saves.edit();
+        editor.putInt(FILE_NAME, n);
+        editor.apply();
 
     }
     // открытие файла
-    public void OpenProgress(){
-
+    private int loadProgress(SharedPreferences saves) {
+        int n = saves.getInt(FILE_NAME, 0);
+        return n;
     }
+     */
 }
