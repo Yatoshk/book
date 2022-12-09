@@ -12,30 +12,33 @@
         android:layout_height="733dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="230dp"
-                android:layout_height="39dp"
+                android:layout_width="377dp"
+                android:layout_height="36dp"
                 android:layout_marginStart="20dp"
+                android:foreground="@drawable/pic1"
+                android:foregroundGravity="center"
+                android:freezesText="false"
+                android:gravity="center"
                 android:text="@string/theory"
                 app:layout_constraintBottom_toTopOf="@+id/textView4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.396"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                android:drawableLeft="@drawable/pic1"/>
-
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -49,6 +52,7 @@
                 app:layout_constraintHorizontal_bias="0.192"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="230dp"
@@ -63,42 +67,25 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <TextView
+                android:id="@+id/textView5"
+                android:layout_width="230dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:text="Выберите верный ответ(ы). \nТо есть не один ответ верный:" />
+
+            <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="17dp"
-                android:text="@string/quest1.1" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="230dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginStart="20dp"
-                android:text="@string/answer" />
-
-            <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="230dp"
-                android:layout_height="39dp"
-                android:layout_marginStart="20dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="17dp"
-                android:text="@string/quest1.2" />
+                android:text="@string/quest2.1" />
 
             <RadioGroup
+                android:id="@+id/rg1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/rg1">
+                android:layout_height="match_parent">
 
                 <RadioButton
                     android:id="@+id/radioButton4"
@@ -107,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="17dp"
-                    android:text="Европа спутник Юпитера"
+                    android:text="∃x∀y(Ky&amp;Hyx)"
                     android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
 
                 <RadioButton
@@ -117,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="17dp"
-                    android:text="Рим находится в Италии" />
+                    android:text="∀x∃y(Hx&amp;Kyx)" />
 
                 <RadioButton
                     android:id="@+id/radioButton6"
@@ -126,16 +113,262 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="17dp"
-                    android:text="Слон больше белки" />
+                    android:text="∃x∃y(Ky&amp;!Hyx) " />
 
-                <Button
-                    android:id="@+id/check2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                <RadioButton
+                    android:id="@+id/radioButton7"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="@string/check"
-                    android:onClick="onClickCheck2"/>
+                    android:layout_marginEnd="17dp"
+                    android:text="∀y∃x(Hy&amp;Kx)" />
+
+                <RadioButton
+                    android:id="@+id/radioButton8"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∀y(Ky&amp;Ha)" />
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="17dp"
+                android:text="@string/quest2.2" />
+
+            <RadioGroup
+                android:id="@+id/rg2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton9"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="207dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∀x(Hx||Gx)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <RadioButton
+                    android:id="@+id/radioButton10"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="207dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∃x(Hx||Gx)" />
+
+                <RadioButton
+                    android:id="@+id/radioButton11"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∀x(Hx||Ga)" />
+
+                <RadioButton
+                    android:id="@+id/radioButton12"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∃x(Gx||Hx)" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="17dp"
+                android:text="@string/quest2.3" />
+
+            <RadioGroup
+                android:id="@+id/rg3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton13"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="207dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∀x(Kx→Bx)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <RadioButton
+                    android:id="@+id/radioButton14"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="207dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∀x(Bx→Kx)" />
+
+                <RadioButton
+                    android:id="@+id/radioButton15"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∀x(Kx→Ba)" />
+
+                <RadioButton
+                    android:id="@+id/radioButton16"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="206dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="∀x(Kb→Bx)" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="17dp"
+                android:text="@string/quest2.4" />
+
+            <RadioGroup
+                android:id="@+id/rg4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton17"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Настоящие шотландцы носят килт"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <RadioButton
+                    android:id="@+id/radioButton18"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="317dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Настоящие шотландцы — это шотландцы" />
+
+                <RadioButton
+                    android:id="@+id/radioButton19"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Есть настоящие шотландцы, которые не носят килт" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="17dp"
+                android:text="@string/quest2.5" />
+
+            <RadioGroup
+                android:id="@+id/rg5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton20"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Медведи не едят некоторое мясо"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <RadioButton
+                    android:id="@+id/radioButton21"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="317dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Некоторые медведи не едят мясо" />
+
+                <RadioButton
+                    android:id="@+id/radioButton22"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Есть медведи, которые меньше крысы" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="17dp"
+                android:text="@string/quest2.6" />
+
+            <RadioGroup
+                android:id="@+id/rg6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/radioButton23"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Люди — это обезьяны и приматы"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small" />
+
+                <RadioButton
+                    android:id="@+id/radioButton24"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="317dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Люди — это обезьяны и люди — это приматы" />
+
+                <RadioButton
+                    android:id="@+id/radioButton25"
+                    style="@style/TextAppearance.Material3.BodySmall"
+                    android:layout_width="318dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="17dp"
+                    android:text="Люди — это обезьяны или приматы" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/check2"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginStart="20dp"
+                android:onClick="onClickCheck2"
+                android:text="@string/check" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

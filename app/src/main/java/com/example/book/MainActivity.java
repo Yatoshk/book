@@ -2,13 +2,11 @@ package com.example.book;
 
 import static java.lang.Math.round;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,19 +18,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.book.databinding.ActivityMainBinding;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
 
 public class MainActivity extends AppCompatActivity {
-    //данные о выполненных заданиях должны обновляться(когда), инфа о класс должен быть виден во всех классах(нужно добавить файл сохраняющий данные)
-
-    //SaveProgress saveProgress;
 
     public final static String FILE_NAME = "content.txt";
-    SharedPreferences saves;
+    public static SharedPreferences saves;
 
 
 
@@ -53,15 +43,13 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        saves = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+        saves = getSharedPreferences(MainActivity.FILE_NAME, MODE_PRIVATE);
         ProgressBar pb = findViewById(R.id.progressBar);
 
-        saveProgress(2);
-        float p = (float)loadProgress()/5;
+        float p = (float)loadProgress()/8;
         pb.setProgress(round(p * 100));
-        //saveProgress.saveProgress(saves, 3);
-        //saveProgress.setProgressBar(saves, pb);
     }
+
     public void onClick1(View view) {
         Intent intent = new Intent(this, Theme1Activity.class);
         startActivity(intent);
@@ -74,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
 
     ////
 
-    private void saveProgress(int n) {
+    public static void saveProgress(int n) {
 
         SharedPreferences.Editor editor = saves.edit();
         editor.putInt(FILE_NAME, n);
@@ -82,14 +70,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private int loadProgress() {
+    public static int loadProgress() {
         int n = saves.getInt(FILE_NAME, 0);
         return n;
     }
-/*
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        saveProgress(loadProgress());
-    }*/
+
 }
