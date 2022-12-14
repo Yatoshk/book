@@ -29,14 +29,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.522"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.107" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonTheme1"
+        app:layout_constraintVertical_bias="0.026" />
+
+    <Button
+        android:id="@+id/buttonTheme3"
+        android:layout_width="344dp"
+        android:layout_height="45dp"
+        android:onClick="onClick3"
+        android:text="@string/theme3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTheme2"
+        app:layout_constraintVertical_bias="0.03" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        tools:layout_editor_absoluteX="302dp"
-        tools:layout_editor_absoluteY="715dp" />
+        tools:layout_editor_absoluteX="234dp"
+        tools:layout_editor_absoluteY="594dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

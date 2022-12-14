@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.SeekBar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
     public final static String FILE_NAME = "content.txt";
     public static SharedPreferences saves;
-
 
 
     @Override
@@ -44,10 +44,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(binding.navView, navController);
 
         saves = getSharedPreferences(MainActivity.FILE_NAME, MODE_PRIVATE);
-        ProgressBar pb = findViewById(R.id.progressBar);
-
-        float p = (float)loadProgress()/8;
-        pb.setProgress(round(p * 100));
     }
 
     public void onClick1(View view) {
@@ -60,6 +56,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onClick3(View view) {
+        Intent intent = new Intent(this, Theme3Activity.class);
+        startActivity(intent);
+    }
+
+    public void check(View view) {
+        ProgressBar pb = findViewById(R.id.progressBar);
+        float p = (float)loadProgress()/9;
+        pb.setProgress(round(p * 100));
+    }
     ////
 
     public static void saveProgress(int n) {

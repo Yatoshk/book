@@ -23,8 +23,8 @@ public class Theme1Activity extends AppCompatActivity {
 
     public void onClickCheck1(View view) {
         //проверка ответов
+
         MainActivity.saves = getSharedPreferences(MainActivity.FILE_NAME, MODE_PRIVATE);
-        //ProgressBar pb = findViewById(R.id.progressBar);
         EditText editText1 = findViewById(R.id.editTextTextPersonName);
         RadioButton rb1 = findViewById(R.id.radioButton);
         RadioButton rb2 = findViewById(R.id.radioButton2);
@@ -33,7 +33,6 @@ public class Theme1Activity extends AppCompatActivity {
         int id = radioGroup.getCheckedRadioButtonId();
         String text1 = editText1.getText().toString();
 
-
         if (text1.length() != 3 || text1.charAt(1)==text1.charAt(2))
             editText1.setBackgroundColor(Color.RED);
         else if (Character.isUpperCase(text1.charAt(0)) && Character.isLowerCase(text1.charAt(1)) &&
@@ -41,7 +40,6 @@ public class Theme1Activity extends AppCompatActivity {
         {
             editText1.setBackgroundColor(Color.GREEN);
             MainActivity.saveProgress((MainActivity.loadProgress())+1);
-            //pb.incrementProgressBy(1);
         }
 
         switch (id) {
@@ -60,11 +58,11 @@ public class Theme1Activity extends AppCompatActivity {
                 rb2.setBackgroundColor(Color.TRANSPARENT);
                 rb1.setBackgroundColor(Color.TRANSPARENT);
                 MainActivity.saveProgress((MainActivity.loadProgress())+1);
-                //pb.incrementProgressBy(1);
                 break;
             default:
                 break;
         }
+
     }
 
 }
