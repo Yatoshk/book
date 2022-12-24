@@ -68,7 +68,10 @@ public class Theme2Activity extends AppCompatActivity {
                 rb6.setBackgroundColor(Color.TRANSPARENT);
                 rb7.setBackgroundColor(Color.TRANSPARENT);
                 rb8.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("3 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "3 ");
+                }
                 break;
             case R.id.radioButton5:
                 rb4.setBackgroundColor(Color.TRANSPARENT);
@@ -76,7 +79,10 @@ public class Theme2Activity extends AppCompatActivity {
                 rb6.setBackgroundColor(Color.TRANSPARENT);
                 rb7.setBackgroundColor(Color.TRANSPARENT);
                 rb8.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("3 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "3 ");
+                }
                 break;
             case R.id.radioButton6:
                 rb4.setBackgroundColor(Color.TRANSPARENT);
@@ -109,7 +115,10 @@ public class Theme2Activity extends AppCompatActivity {
                 rb10.setBackgroundColor(Color.TRANSPARENT);
                 rb11.setBackgroundColor(Color.TRANSPARENT);
                 rb12.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("4 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "4 ");
+                }
                 break;
             case R.id.radioButton10:
                 rb9.setBackgroundColor(Color.TRANSPARENT);
@@ -139,14 +148,20 @@ public class Theme2Activity extends AppCompatActivity {
                 rb14.setBackgroundColor(Color.TRANSPARENT);
                 rb15.setBackgroundColor(Color.TRANSPARENT);
                 rb16.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("5 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "5 ");
+                }
                 break;
             case R.id.radioButton14:
                 rb13.setBackgroundColor(Color.TRANSPARENT);
                 rb14.setBackgroundColor(Color.GREEN);
                 rb15.setBackgroundColor(Color.TRANSPARENT);
                 rb16.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("5 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "5 ");
+                }
                 break;
             case R.id.radioButton15:
                 rb13.setBackgroundColor(Color.TRANSPARENT);
@@ -169,13 +184,19 @@ public class Theme2Activity extends AppCompatActivity {
                 rb17.setBackgroundColor(Color.GREEN);
                 rb18.setBackgroundColor(Color.TRANSPARENT);
                 rb19.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("6 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "6 ");
+                }
                 break;
             case R.id.radioButton18:
                 rb17.setBackgroundColor(Color.TRANSPARENT);
                 rb18.setBackgroundColor(Color.GREEN);
                 rb19.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("6 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "6 ");
+                }
                 break;
             case R.id.radioButton19:
                 rb17.setBackgroundColor(Color.TRANSPARENT);
@@ -195,7 +216,10 @@ public class Theme2Activity extends AppCompatActivity {
                 rb20.setBackgroundColor(Color.TRANSPARENT);
                 rb21.setBackgroundColor(Color.GREEN);
                 rb22.setBackgroundColor(Color.TRANSPARENT);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("7 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "7 ");
+                }
                 break;
             case R.id.radioButton22:
                 rb20.setBackgroundColor(Color.TRANSPARENT);
@@ -220,7 +244,10 @@ public class Theme2Activity extends AppCompatActivity {
                 rb23.setBackgroundColor(Color.TRANSPARENT);
                 rb24.setBackgroundColor(Color.TRANSPARENT);
                 rb25.setBackgroundColor(Color.GREEN);
-                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                if (!((MainActivity.loadQuests()).contains("8 "))){
+                    MainActivity.saveProgress((MainActivity.loadProgress()) + 1);
+                    MainActivity.saveQuest(MainActivity.loadQuests() + "8 ");
+                }
                 break;
             default:
                 break;

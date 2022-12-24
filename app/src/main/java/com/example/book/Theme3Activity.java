@@ -47,7 +47,12 @@ public class Theme3Activity extends AppCompatActivity {
             sw.setBackgroundColor(Color.RED);
 
         if(questDone == 10)
-            MainActivity.saveProgress((MainActivity.loadProgress())+1);
+        {
+            if (!((MainActivity.loadQuests()).contains("9 "))){
+                MainActivity.saveProgress((MainActivity.loadProgress())+1);
+                MainActivity.saveQuest(MainActivity.loadQuests() + "9 ");
+            }
+        }
     }
     private void checkText(EditText e, String t)
     {

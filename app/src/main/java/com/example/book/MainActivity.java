@@ -6,8 +6,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ProgressBar;
 import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -23,7 +27,9 @@ import com.example.book.databinding.ActivityMainBinding;
 public class MainActivity extends AppCompatActivity {
 
     public final static String FILE_NAME = "content.txt";
+    public final static String SAVES_NAME = "saves.txt";
     public static SharedPreferences saves;
+    public static SharedPreferences quests;
 
 
     @Override
@@ -43,8 +49,14 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        saves = getSharedPreferences(MainActivity.FILE_NAME, MODE_PRIVATE);
+
+
+        saves = getSharedPreferences(FILE_NAME, MODE_PRIVATE);
+        quests = getSharedPreferences(SAVES_NAME, MODE_PRIVATE);
+
+
     }
+
 
     public void onClick1(View view) {
         Intent intent = new Intent(this, Theme1Activity.class);
@@ -63,11 +75,49 @@ public class MainActivity extends AppCompatActivity {
 
     public void check(View view) {
         ProgressBar pb = findViewById(R.id.progressBar);
+        TextView text = findViewById(R.id.textView8);
         float p = (float)loadProgress()/9;
+        text.setText("Ваш прогресс " + round(p * 100) + "%");
         pb.setProgress(round(p * 100));
     }
+    public void check1(View view) {
+        TextView about = findViewById(R.id.textView12);
+        Button bh = findViewById(R.id.check);
+        Button bv = findViewById(R.id.check5);
+        bh.setVisibility(View.VISIBLE);
+        bv.setVisibility(View.INVISIBLE);
+        about.setText("Приложение разработали: Чесалова Надежда, Райден Роман, Репкин Денис, Закиров Тимур - студенты Ульяновского государственного университета группы МОАИС-21/1");
+    }
+    public void check2(View view) {
+        TextView about = findViewById(R.id.textView12);
+        Button bh = findViewById(R.id.check);
+        Button bv = findViewById(R.id.check5);
+        bh.setVisibility(View.INVISIBLE);
+        bv.setVisibility(View.VISIBLE);
+        about.setText("");
+    }
+/*
+    public void reload(View view) {
+        saveProgress(0);
+    }
+    public void reload1(View view) {
+        saveQuest("");
+    }*/
     ////
 
+    public static void saveQuest(String n) {
+
+        SharedPreferences.Editor editor1 = quests.edit();
+        editor1.putString(SAVES_NAME, n);
+        editor1.apply();
+
+    }
+
+    public static String loadQuests() {
+        String n = quests.getString(SAVES_NAME, "");
+        return n;
+    }
+//////////
     public static void saveProgress(int n) {
 
         SharedPreferences.Editor editor = saves.edit();

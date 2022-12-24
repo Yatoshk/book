@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">book</string>
+    <string name="app_name">MathLogic</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Learning</string>
     <string name="theme1">Тема 1. Составные части</string>
