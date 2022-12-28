@@ -16,6 +16,7 @@ import android.widget.RadioGroup;
 import java.util.ArrayList;
 
 public class Theme1Activity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -2,16 +2,15 @@ package com.example.book;
 
 import static java.lang.Math.round;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
 import android.widget.ProgressBar;
-import android.widget.SeekBar;
-import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -30,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
     public final static String SAVES_NAME = "saves.txt";
     public static SharedPreferences saves;
     public static SharedPreferences quests;
-
+    public static DailyQuests genForDaily = new DailyQuests();
+    public static int dailyCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         quests = getSharedPreferences(SAVES_NAME, MODE_PRIVATE);
 
 
+
     }
 
 
@@ -71,6 +72,23 @@ public class MainActivity extends AppCompatActivity {
     public void onClick3(View view) {
         Intent intent = new Intent(this, Theme3Activity.class);
         startActivity(intent);
+    }
+
+    public void daily(View view) {
+        if(!genForDaily.flag)
+        {
+            returnClass(genForDaily.qenNumber());
+            genForDaily.flag = true;
+        }
+        else
+        {
+            Context context = getApplicationContext();
+            CharSequence text = "Ежедневные задание пройдены";
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
+
     }
 
     public void check(View view) {
@@ -95,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         bh.setVisibility(View.INVISIBLE);
         bv.setVisibility(View.VISIBLE);
         about.setText("");
+
     }
 /*
     public void reload(View view) {
@@ -130,5 +149,28 @@ public class MainActivity extends AppCompatActivity {
         int n = saves.getInt(FILE_NAME, 0);
         return n;
     }
+////////////////
+    public void returnClass(int n){
+        Intent intent = null;
+        switch (n)
+        {
 
+            case 1:
+                intent = new Intent(this, quest1.class);
+                break;
+            case 2:
+                intent = new Intent(this, quest2.class);
+                break;
+            case 3:
+                intent = new Intent(this, quest3.class);
+                break;
+            case 4:
+                intent = new Intent(this, quest4.class);
+                break;
+            case 5:
+                intent = new Intent(this, quest5.class);
+                break;
+        }
+        startActivity(intent);
+    }
 }
